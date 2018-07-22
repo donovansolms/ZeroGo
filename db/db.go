@@ -15,7 +15,7 @@ import (
 
 	"github.com/Jeffail/gabs"
 	"github.com/donovansolms/ZeroGo/utils"
-	_ "github.com/mattn/go-sqlite3"
+	//_ "github.com/mattn/go-sqlite3"
 )
 
 type DB struct {
@@ -29,12 +29,12 @@ func NewDB(site string, schema *gabs.Container, p string) *DB {
 	dbFile := path.Join(p, schema.S("db_file").Data().(string))
 
 	os.MkdirAll(path.Dir(dbFile), 0777)
-	db, err := sql.Open("sqlite3", dbFile)
-	if err != nil {
-		log.Fatal(fmt.Errorf("DB error: %v", err))
-	}
+	// db, err := sql.Open("sqlite3", dbFile)
+	// if err != nil {
+	// 	log.Fatal(fmt.Errorf("DB error: %v", err))
+	// }
 	return &DB{
-		db:     db,
+		db:     nil,
 		schema: schema,
 		path:   path.Dir(dbFile),
 		site:   site,

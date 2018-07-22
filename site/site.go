@@ -87,10 +87,10 @@ func (site *Site) initDB() {
 		return
 	}
 	// log.Fatal("initDB")
-	schema, _ := utils.LoadJSON(filename)
-	site.DB = db.NewDB(site.Address, schema, site.Path)
-	site.DB.Init()
-	log.Println("DB inited")
+	//schema, _ := utils.LoadJSON(filename)
+	//site.DB = db.NewDB(site.Address, schema, site.Path)
+	//site.DB.Init()
+	//log.Println("DB inited")
 }
 
 func (site *Site) handleEvents() {

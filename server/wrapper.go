@@ -6,8 +6,8 @@ import (
 	"html/template"
 	"log"
 
-	"github.com/G1itchZero/ZeroGo/site"
-	"github.com/G1itchZero/ZeroGo/utils"
+	"github.com/donovansolms/ZeroGo/site"
+	"github.com/donovansolms/ZeroGo/utils"
 	"github.com/labstack/echo"
 )
 

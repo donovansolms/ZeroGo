@@ -9,14 +9,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/G1itchZero/ZeroGo/events"
-	"github.com/G1itchZero/ZeroGo/interfaces"
-	"github.com/G1itchZero/ZeroGo/peer_manager"
-	"github.com/G1itchZero/ZeroGo/tasks"
-	"github.com/G1itchZero/ZeroGo/utils"
 	"github.com/Jeffail/gabs"
+	"github.com/donovansolms/ZeroGo/events"
+	"github.com/donovansolms/ZeroGo/interfaces"
+	"github.com/donovansolms/ZeroGo/peer_manager"
+	"github.com/donovansolms/ZeroGo/tasks"
+	"github.com/donovansolms/ZeroGo/utils"
 	"github.com/fatih/color"
-	"gopkg.in/cheggaaa/pb.v1"
 
 	log "github.com/Sirupsen/logrus"
 )
@@ -34,12 +33,12 @@ type Downloader struct {
 	TotalFiles       int
 	StartedTasks     int
 	OnChanges        chan events.SiteEvent
-	ProgressBar      *pb.ProgressBar
+	//ProgressBar      *pb.ProgressBar
 	sync.Mutex
 }
 
 func NewDownloader(address string) *Downloader {
-	green := color.New(color.FgGreen).SprintFunc()
+	//green := color.New(color.FgGreen).SprintFunc()
 	d := Downloader{
 		Peers:        peer_manager.NewPeerManager(address),
 		Address:      address,
@@ -48,16 +47,17 @@ func NewDownloader(address string) *Downloader {
 		StartedTasks: 0,
 		Includes:     []string{},
 	}
-	if !utils.GetDebug() {
-		d.ProgressBar = pb.New(1).Prefix(green(address))
-		d.ProgressBar.SetRefreshRate(time.Millisecond * 50)
-		d.ProgressBar.ShowTimeLeft = false
-	}
+	// if !utils.GetDebug() {
+	// 	d.ProgressBar = pb.New(1).Prefix(green(address))
+	// 	d.ProgressBar.SetRefreshRate(time.Millisecond * 50)
+	// 	d.ProgressBar.ShowTimeLeft = false
+	// }
 	return &d
 }
 
 func (d *Downloader) Download(done chan int, filter FilterFunc, modified float64) bool {
 	green := color.New(color.FgGreen).SprintFunc()
+
 	// fmt.Println(fmt.Sprintf("Download site: %s", green(d.Address)))
 
 	dir := path.Join(utils.GetDataPath(), d.Address)
@@ -172,9 +172,9 @@ func (d *Downloader) processContent(filter FilterFunc) *tasks.FileTask {
 			"task": task,
 		}).Debug("New task")
 	}
-	if d.ProgressBar != nil {
-		d.ProgressBar.Total = int64(d.TotalFiles)
-	}
+	// if d.ProgressBar != nil {
+	// 	d.ProgressBar.Total = int64(d.TotalFiles)
+	// }
 	return task
 
 }
@@ -193,11 +193,11 @@ func (d *Downloader) ScheduleFileForPeer(task *tasks.FileTask, peer interfaces.I
 		"task": task.Filename,
 		"peer": peer.GetAddress(),
 	}).Info("Requesting file")
-	res := task.AddPeer(peer)
-	if d.ProgressBar != nil && res == nil {
-		d.ProgressBar.Increment()
-		d.ProgressBar.Update()
-	}
+	_ = task.AddPeer(peer)
+	// if d.ProgressBar != nil && res == nil {
+	// 	d.ProgressBar.Increment()
+	// 	d.ProgressBar.Update()
+	// }
 	return task
 }
 

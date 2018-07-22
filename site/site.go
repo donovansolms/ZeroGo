@@ -8,12 +8,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/G1itchZero/ZeroGo/db"
-	"github.com/G1itchZero/ZeroGo/downloader"
-	"github.com/G1itchZero/ZeroGo/events"
-	"github.com/G1itchZero/ZeroGo/utils"
 	"github.com/Jeffail/gabs"
 	log "github.com/Sirupsen/logrus"
+	"github.com/donovansolms/ZeroGo/db"
+	"github.com/donovansolms/ZeroGo/downloader"
+	"github.com/donovansolms/ZeroGo/events"
+	"github.com/donovansolms/ZeroGo/utils"
 )
 
 type Site struct {
@@ -74,10 +74,10 @@ func (site *Site) Download(ch chan *Site) {
 	site.initDB()
 	site.Ready = true
 	// site.Downloader.ProgressBar.Add(site.Downloader.TotalFiles - site.Downloader.FinishedTasks())
-	if site.Downloader.ProgressBar != nil {
-		site.Downloader.ProgressBar.Update()
-		site.Downloader.ProgressBar.Finish()
-	}
+	// if site.Downloader.ProgressBar != nil {
+	// 	site.Downloader.ProgressBar.Update()
+	// 	site.Downloader.ProgressBar.Finish()
+	// }
 	site.Done <- site
 }
 

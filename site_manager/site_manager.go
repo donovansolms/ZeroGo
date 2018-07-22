@@ -8,25 +8,21 @@ import (
 	"strings"
 	"time"
 
-	"github.com/G1itchZero/ZeroGo/downloader"
-	"github.com/G1itchZero/ZeroGo/site"
-	"github.com/G1itchZero/ZeroGo/utils"
 	"github.com/Jeffail/gabs"
 	log "github.com/Sirupsen/logrus"
-	"gopkg.in/cheggaaa/pb.v1"
+	"github.com/donovansolms/ZeroGo/downloader"
+	"github.com/donovansolms/ZeroGo/site"
+	"github.com/donovansolms/ZeroGo/utils"
 )
 
 type SiteManager struct {
-	Sites  map[string]*site.Site
-	Names  map[string]interface{}
-	pbPool *pb.Pool
+	Sites map[string]*site.Site
+	Names map[string]interface{}
 }
 
 func NewSiteManager() *SiteManager {
-	pool, _ := pb.StartPool()
 	sm := SiteManager{
-		Sites:  map[string]*site.Site{},
-		pbPool: pool,
+		Sites: map[string]*site.Site{},
 	}
 	go sm.updateSites()
 	return &sm
@@ -66,9 +62,9 @@ func (sm *SiteManager) Get(address string) *site.Site {
 			sm.Sites[bit] = s
 		}
 	}
-	if !utils.GetDebug() {
-		sm.pbPool.Add(s.Downloader.ProgressBar)
-	}
+	// if !utils.GetDebug() {
+	// 	sm.pbPool.Add(s.Downloader.ProgressBar)
+	// }
 	go sm.processSite(s)
 	return s
 }
@@ -81,9 +77,9 @@ func (sm *SiteManager) GetFiles(address string, filter downloader.FilterFunc) *s
 		s.Added = int(time.Now().Unix())
 		sm.Sites[address] = s
 	}
-	if !utils.GetDebug() {
-		sm.pbPool.Add(s.Downloader.ProgressBar)
-	}
+	// if !utils.GetDebug() {
+	// 	sm.pbPool.Add(s.Downloader.ProgressBar)
+	// }
 	go sm.processSite(s)
 	return s
 }

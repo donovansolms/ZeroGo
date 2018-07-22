@@ -12,10 +12,10 @@ import (
 
 	l "log"
 
-	"github.com/G1itchZero/ZeroGo/server"
-	"github.com/G1itchZero/ZeroGo/site_manager"
-	"github.com/G1itchZero/ZeroGo/utils"
 	log "github.com/Sirupsen/logrus"
+	"github.com/donovansolms/ZeroGo/server"
+	"github.com/donovansolms/ZeroGo/site_manager"
+	"github.com/donovansolms/ZeroGo/utils"
 	"github.com/pkg/browser"
 	"github.com/urfave/cli"
 )

@@ -14,10 +14,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/G1itchZero/ZeroGo/interfaces"
-	"github.com/G1itchZero/ZeroGo/utils"
 	_ "github.com/Sirupsen/logrus"
 	log "github.com/Sirupsen/logrus"
+	"github.com/donovansolms/ZeroGo/interfaces"
+	"github.com/donovansolms/ZeroGo/utils"
 	msgpack "gopkg.in/vmihailenco/msgpack.v2"
 )
 

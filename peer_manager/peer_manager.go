@@ -13,9 +13,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/G1itchZero/ZeroGo/peer"
-	"github.com/G1itchZero/ZeroGo/utils"
 	log "github.com/Sirupsen/logrus"
+	"github.com/donovansolms/ZeroGo/peer"
+	"github.com/donovansolms/ZeroGo/utils"
 	"github.com/google/go-querystring/query"
 	bencode "github.com/jackpal/bencode-go"
 )

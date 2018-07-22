@@ -11,11 +11,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/G1itchZero/ZeroGo/socket"
-	"github.com/G1itchZero/ZeroGo/utils"
+	"github.com/donovansolms/ZeroGo/socket"
+	"github.com/donovansolms/ZeroGo/utils"
 
-	"github.com/G1itchZero/ZeroGo/site_manager"
 	log "github.com/Sirupsen/logrus"
+	"github.com/donovansolms/ZeroGo/site_manager"
 	"github.com/fatih/color"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo"

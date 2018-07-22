@@ -6,11 +6,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/G1itchZero/ZeroGo/site"
-	"github.com/G1itchZero/ZeroGo/site_manager"
-	"github.com/G1itchZero/ZeroGo/utils"
 	"github.com/Jeffail/gabs"
 	log "github.com/Sirupsen/logrus"
+	"github.com/donovansolms/ZeroGo/site"
+	"github.com/donovansolms/ZeroGo/site_manager"
+	"github.com/donovansolms/ZeroGo/utils"
 	websocket "github.com/gorilla/websocket"
 )
 

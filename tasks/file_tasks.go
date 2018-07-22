@@ -10,10 +10,10 @@ import (
 	"path"
 	"time"
 
-	"github.com/G1itchZero/ZeroGo/events"
-	"github.com/G1itchZero/ZeroGo/interfaces"
-	"github.com/G1itchZero/ZeroGo/utils"
 	log "github.com/Sirupsen/logrus"
+	"github.com/donovansolms/ZeroGo/events"
+	"github.com/donovansolms/ZeroGo/interfaces"
+	"github.com/donovansolms/ZeroGo/utils"
 )
 
 type Tasks []*FileTask

@@ -13,8 +13,8 @@ import (
 
 	log "github.com/Sirupsen/logrus"
 
-	"github.com/G1itchZero/ZeroGo/utils"
 	"github.com/Jeffail/gabs"
+	"github.com/donovansolms/ZeroGo/utils"
 	_ "github.com/mattn/go-sqlite3"
 )
 

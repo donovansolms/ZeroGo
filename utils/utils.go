@@ -64,6 +64,10 @@ func GetDataPath() string {
 	return DATA
 }
 
+func SetDataPath(path string) {
+	DATA = path
+}
+
 func GetPeerID() string {
 	if PEER_ID == "" {
 		PEER_ID = fmt.Sprintf("-ZN0%s-GO%s", strings.Replace(VERSION, ".", "", -1), RandomString(10))

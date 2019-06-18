@@ -12,7 +12,7 @@ import (
 
 	l "log"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	"github.com/donovansolms/ZeroGo/server"
 	"github.com/donovansolms/ZeroGo/site_manager"
 	"github.com/donovansolms/ZeroGo/utils"

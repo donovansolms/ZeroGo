@@ -13,7 +13,7 @@ import (
 	"sync"
 	"time"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	"github.com/donovansolms/ZeroGo/peer"
 	"github.com/donovansolms/ZeroGo/utils"
 	"github.com/google/go-querystring/query"

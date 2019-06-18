@@ -14,8 +14,8 @@ import (
 	"sync"
 	"time"
 
-	_ "github.com/Sirupsen/logrus"
-	log "github.com/Sirupsen/logrus"
+	_ "github.com/sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	"github.com/donovansolms/ZeroGo/interfaces"
 	"github.com/donovansolms/ZeroGo/utils"
 	msgpack "gopkg.in/vmihailenco/msgpack.v2"

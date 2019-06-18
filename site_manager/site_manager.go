@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/Jeffail/gabs"
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	"github.com/donovansolms/ZeroGo/downloader"
 	"github.com/donovansolms/ZeroGo/site"
 	"github.com/donovansolms/ZeroGo/utils"

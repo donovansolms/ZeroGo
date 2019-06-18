@@ -17,7 +17,7 @@ import (
 	"github.com/donovansolms/ZeroGo/utils"
 	"github.com/fatih/color"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 )
 
 type FilterFunc func(string) bool

@@ -122,6 +122,10 @@ func (site *Site) GetFile(filename string) ([]byte, error) {
 }
 
 func (site *Site) Remove() {
+	// Don't attempt to remove a nil site
+	if site == nil {
+		return
+	}
 	err := os.RemoveAll(site.Path)
 	if err != nil {
 		log.WithFields(log.Fields{

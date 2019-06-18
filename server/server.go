@@ -14,7 +14,7 @@ import (
 	"github.com/donovansolms/ZeroGo/socket"
 	"github.com/donovansolms/ZeroGo/utils"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	"github.com/donovansolms/ZeroGo/site_manager"
 	"github.com/fatih/color"
 	"github.com/gorilla/websocket"
